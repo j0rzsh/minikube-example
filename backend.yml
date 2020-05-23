@@ -50,7 +50,7 @@ spec:
     spec:
       containers:
         - name: crediticial-info
-          image: "gcr.io/google-samples/hello-go-gke:1.0"
+          image: "gcr.io/google-samples/hello-go-gke:1.0" ### EXAMPLE IMAGE
           ports:
             - name: http
               containerPort: 80
