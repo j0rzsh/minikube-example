@@ -63,11 +63,11 @@ kubectl apply -f backend.yml
 ## Frontend
 
 - Service
-- Deployent (3 pods)
+- Deployment (3 pods)
 - Backend DNS name as environment variable
-- Ingress created ponting to Service
+- Ingress created ponting to Service with nginx ingress plugin
 
-Note: run locally. Modified /etc/hosts for resolving external dns name as minikube IP.
+Note: I ran it locally. Modified /etc/hosts for resolving external dns name as minikube IP.
 
 ```bash
 kubectl apply -f frontend.yml
