@@ -1,6 +1,6 @@
 # minikube-example
 
-Example of Minikube deployment with two services (backend and frontend)
+Example of Minikube deployment with two services (backend and frontend). An example image is used and no interaction between frontend and backend is made beacuse of it.
 
 ## Install minikube and kubectl
 
@@ -45,12 +45,20 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 - Namespace
 - ConfigMap with coreDNS configuration changes (Backend DNS)
 
+```bash
+kubectl apply -f previous-config.yml
+```
+
 ## Backend
 
 - Service
 - Deployment (3 pods)
 - Custom dns name through coreDNS plugin configuration
 - ConfigMap passed to all pods
+
+```bash
+kubectl apply -f backend.yml
+```
 
 ## Frontend
 
@@ -60,3 +68,7 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 - Ingress created ponting to Service
 
 Note: run locally. Modified /etc/hosts for resolving external dns name as minikube IP.
+
+```bash
+kubectl apply -f frontend.yml
+```
