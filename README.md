@@ -40,6 +40,11 @@ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboar
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
 
+## Previous Config
+
+- Namespace
+- ConfigMap with coreDNS configuration changes (Backend DNS)
+
 ## Backend
 
 - Service
@@ -48,3 +53,10 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 - ConfigMap passed to all pods
 
 ## Frontend
+
+- Service
+- Deployent (3 pods)
+- Backend DNS name as environment variable
+- Ingress created ponting to Service
+
+Note: run locally. Modified /etc/hosts for resolving external dns name as minikube IP.
